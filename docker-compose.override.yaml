@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  x5-front:
+    build:
+      context: .
+      dockerfile: docker/nodejs.Dockerfile
+    environment:
+      - NODE_ENV=local
+    command: >
+      sh -c "npm install
+      && npm run dev"
+    volumes:
+      - .:/usr/src/x5-test
+    ports:
+      - 3000:3000

@@ -1,0 +1,6 @@
+.git
+.gitignore
+packege-lock.json
+node_modules
+.nuxt
+.helm

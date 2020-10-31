@@ -1,0 +1,28 @@
+version: '3.7'
+services:
+  x5-front:
+    container_name: x5-front
+    image: ${CI_REGISTRY:-cr.yandex}/${CI_PROJECT_NAMESPACE:-x5-retail}/${CI_PROJECT_NAME:-x5-test}:${CI_COMMIT_REF_SLUG:-local}.${CI_PIPELINE_ID:-1}
+    environment:
+      - NODE_ENV=production
+      - API_BASE_URL=http://localhost:3000
+      - BACKEND_API_URL=https://x5-backend.artw.dev
+      - MONGODB_HOST=x5-mongodb
+      - MONGODB_DATABASE=x5_database
+      - REDIS_HOST=x5-redis
+    depends_on:
+      - x5-mongodb
+      - x5-redis
+    restart: always
+
+  x5-mongodb:
+    container_name: x5-mongodb
+    image: "mongo"
+    restart: always
+
+  x5-redis:
+    container_name: x5-redis
+    image: "redis:alpine"
+    restart: always
+
+
