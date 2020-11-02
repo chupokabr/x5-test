@@ -85,6 +85,10 @@
 import { mapGetters } from 'vuex';
 
 export default {
+  async asyncData({store}) {
+    const user = store.getters['auth/getUser']
+    return {data: {user: user}}
+  },
   data: () => ({
     drawer: true,
     selectedItem: 0,
