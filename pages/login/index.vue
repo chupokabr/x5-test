@@ -1,13 +1,13 @@
 <template>
   <v-row no-gutters align="stretch" style="height: 100%">
-    <v-col cols="5">
+    <v-col sm="12" md="5">
       <v-img
         src="https://i.picsum.photos/id/1/5616/3744.jpg?hmac=kKHwwU8s46oNettHKwJ24qOlIAsWN9d2TtsXDoCWWsQ"
         min-height="100%"
         gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"></v-img>
     </v-col>
 
-    <v-col cols="7" class="d-flex align-center">
+    <v-col class="d-flex align-center" sm="12" md="7">
 
       <v-card tile flat class="auth-box">
         <v-card-title>

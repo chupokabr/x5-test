@@ -1,17 +1,17 @@
 <template>
   <v-row no-gutters align="stretch" style="height: 100%">
-    <v-col cols="5">
+    <v-col md="5" sm="12">
       <v-img
         src="https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
         min-height="100%"
         gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"></v-img>
     </v-col>
 
-    <v-col cols="7" class="d-flex align-center">
+    <v-col md="7" sm="12" class="d-flex align-center">
 
       <v-card tile flat class="auth-box">
         <v-card-title>
-          <h1>Зарегистрироваться</h1>
+          <h1>Регистрация</h1>
         </v-card-title>
         <v-card-text>
           <p>

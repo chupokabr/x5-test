@@ -758,8 +758,17 @@ $bgBlue: #E8F0FD;
     font: 13px 'Arial', sans-serif;
     color: #fff;
 
+    @media screen and (max-width: 768px) {
+      margin-top: 10px;
+    }
+
     .v-icon {
       margin-right: 10px;
+
+      @media screen and (max-width: 768px) {
+        margin-right: 5px;
+        font-size: 14px;
+      }
     }
   }
 
@@ -767,6 +776,11 @@ $bgBlue: #E8F0FD;
     flex-shrink: 0;
     width: 70px;
     height: 70px;
+
+    @media screen and (max-width: 768px) {
+      width: 50px;
+      height: 50px;
+    }
 
     img {
       max-width: 100%;
@@ -781,10 +795,19 @@ $bgBlue: #E8F0FD;
     justify-content: space-between;
     width: calc(100% - 70px);
     padding: 15px 20px 15px 15px;
+
+    @media screen and (max-width: 768px) {
+      width: calc(100% - 50px);
+      padding: 8px 10px 10px 5px;
+    }
   }
 
   &__input {
     width: 50%;
+
+    @media screen and (max-width: 768px) {
+      width: 70%;
+    }
   }
 }
 

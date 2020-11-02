@@ -6,8 +6,7 @@
       <v-app-bar-nav-icon @click="drawer = !drawer" color="#fff"></v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-navigation-drawer app clipped v-model="drawer" mobile-breakpoint="650" dark permanent
-                         color="deep-purple accent-4">
+    <v-navigation-drawer app clipped v-model="drawer" mobile-breakpoint="768" dark color="deep-purple accent-4">
       <template v-slot:prepend>
         <v-list-item two-line>
           <v-list-item-avatar>
@@ -87,7 +86,7 @@ import {mapGetters} from 'vuex';
 
 export default {
   async asyncData ({ store }) {
-    return {data: {user: store.getters['auth/getUser']}}
+    return {data: {user: store.getters['auth/getUserServer']}}
   },
   data: () => ({
     drawer: true,

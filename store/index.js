@@ -4,7 +4,7 @@ export const state = () => ({
 
 export const actions = {
   async nuxtServerInit({ dispatch }) {
-    await dispatch('auth/getUser')
+    await dispatch('auth/getUserServer')
   }
 }
 
