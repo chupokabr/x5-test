@@ -1,6 +1,9 @@
 export const state = () => ({
-  status: null,
-  user: null,
+  status: false,
+  user: {
+    name: '',
+    email: ''
+  },
 });
 
 export const mutations = {
@@ -11,8 +14,11 @@ export const mutations = {
     state.user = user
   },
   clearAuth(state) {
-    state.status = null
-    state.user = null
+    state.status = false
+    state.user = {
+      name: '',
+      email: ''
+    }
   }
 }
 
