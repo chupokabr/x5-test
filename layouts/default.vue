@@ -1,12 +1,13 @@
 <template>
   <v-app app>
-    <Snackbar />
+    <Snackbar/>
 
     <v-app-bar app clipped-left flat color="deep-purple darken-3">
-      <v-app-bar-nav-icon @click="drawer = true" color="#fff"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer" color="#fff"></v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-navigation-drawer app clipped v-model="drawer" mobile-breakpoint="650" dark permanent color="deep-purple accent-4">
+    <v-navigation-drawer app clipped v-model="drawer" mobile-breakpoint="650" dark permanent
+                         color="deep-purple accent-4">
       <template v-slot:prepend>
         <v-list-item two-line>
           <v-list-item-avatar>
@@ -14,8 +15,8 @@
           </v-list-item-avatar>
 
           <v-list-item-content>
-            <v-list-item-title>{{ user.name || '' }}</v-list-item-title>
-            <v-list-item-subtitle>{{ user.email || '' }}</v-list-item-subtitle>
+            <v-list-item-title>{{ user ? user.name || '' : '' }}</v-list-item-title>
+            <v-list-item-subtitle>{{ user ? user.email || '': '' }}</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
       </template>
@@ -68,7 +69,7 @@
     </v-navigation-drawer>
 
     <v-main style="height: 100%" :class='{ "loading-page": loading }'>
-      <Nuxt />
+      <Nuxt/>
     </v-main>
 
     <v-overlay :value="loading" opacity=".5">
@@ -82,20 +83,19 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import {mapGetters} from 'vuex';
 
 export default {
-  async asyncData({store}) {
-    const user = store.getters['auth/getUser']
-    return {data: {user: user}}
+  async asyncData ({ store }) {
+    return {data: {user: store.getters['auth/getUser']}}
   },
   data: () => ({
     drawer: true,
     selectedItem: 0,
     navigations: [
-      { title: 'Таблицы', icon: 'mdi-file-table-box-multiple', 'url': '/' },
+      {title: 'Таблицы', icon: 'mdi-file-table-box-multiple', 'url': '/'},
     ],
-    loading: true
+    loading: true,
   }),
   computed: {
     ...mapGetters({
